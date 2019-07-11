@@ -1,0 +1,12 @@
+volume = 1;
+wasPlaying = false;
+while (true)
+{
+    if (IsPlaying)
+        volume = 1;
+    else
+        volume *= 0.999;
+       
+    yield volume;
+    pause 1;  
+}

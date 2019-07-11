@@ -1,0 +1,8 @@
+a = [0, 2, 4, 7, 9];
+while (true)
+{
+    rndNote = a[Rnd() * Length(a)];
+    yield MidiNoteToFrequency(rndNote + MidiNote);
+    pauseTime = Floor(Rnd() * 8) / 8;
+    pause 1b * pauseTime;
+}

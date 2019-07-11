@@ -1,0 +1,8 @@
+a = [0, 2, 4, 5, 7, 9, 11, 12];
+for (i = 0; ; i += 1)
+{
+    if (i == Length(a))
+        i = 0;
+    yield MidiNoteToFrequency(a[i] + MidiNote);
+    pause 1b/4;
+}

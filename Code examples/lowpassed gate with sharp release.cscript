@@ -1,0 +1,13 @@
+volume = 1;
+coeff = 0.9999;
+wasPlaying = false;
+while (true)
+{
+    if (IsPlaying)
+        volume = 1;
+    elsew
+        volume *= coeff;
+       
+    yield volume;
+    pause 1;  
+}

@@ -1,0 +1,5 @@
+if (IsPlaying)
+    yield 1;
+else
+    yield 0;
+pause 1;

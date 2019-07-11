@@ -1,0 +1,10 @@
+t = 0;
+freq = 8;
+lfoAmount = 0.75;
+while (true)
+{
+    yield 5000 * (lfoAmount * (0.5 * Sin(t) + 0.5) + 1 - lfoAmount);
+    t += 2 * PI * freq / SampleRate;
+    t %= 2 * PI;
+    pause 1;
+}
