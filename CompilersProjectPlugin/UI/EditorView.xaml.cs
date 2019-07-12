@@ -19,10 +19,12 @@ namespace CompilersProject.UI
     public partial class EditorView : UserControl, INotifyPropertyChanged
     {
         private Plugin plugin;
+        private Routing routing;
         
         internal EditorView(Plugin plugin)
         {
             this.plugin = plugin;
+            routing = plugin.AudioProcessor.Routing;
             InitializeComponent();
         }
 
@@ -163,19 +165,23 @@ namespace CompilersProject.UI
                 {
                     case 0:
                         var factory = ControlScriptCompiler.Compile(OscFrequencyScriptText);
-                        plugin.AudioProcessor.Routing.OscAFrequencyScript = factory.GetScript();
+                        lock (routing.LockerObject)
+                            routing.OscAFrequencyScript = factory.GetScript();
                         break;
                     case 1:
                         var scriptFactory = ControlScriptCompiler.Compile(FilterCutoffScriptText);
-                        plugin.AudioProcessor.Routing.FilterCutoffScript = scriptFactory.GetScript();
+                        lock (routing.LockerObject)
+                            plugin.AudioProcessor.Routing.FilterCutoffScript = scriptFactory.GetScript();
                         break;
                     case 2:
                         scriptFactory = ControlScriptCompiler.Compile(FilterResonanceScriptText);
-                        plugin.AudioProcessor.Routing.FilterResonanceScript = scriptFactory.GetScript();
+                        lock (routing.LockerObject)
+                            plugin.AudioProcessor.Routing.FilterResonanceScript = scriptFactory.GetScript();
                         break;
                     case 3:
                         scriptFactory = ControlScriptCompiler.Compile(AmplitudeScriptText);
-                        plugin.AudioProcessor.Routing.AmplitudeScript = scriptFactory.GetScript();
+                        lock (routing.LockerObject)
+                            plugin.AudioProcessor.Routing.AmplitudeScript = scriptFactory.GetScript();
                         break;
                 }
             }

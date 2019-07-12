@@ -15,7 +15,6 @@ namespace ControlScriptLanguage
     {
         static ControlScriptCompiler()
         {
-            Environment.SetEnvironmentVariable("ROSLYN_COMPILER_LOCATION", "c:\\roslyn");
         }
 
         private static string codePrefix =

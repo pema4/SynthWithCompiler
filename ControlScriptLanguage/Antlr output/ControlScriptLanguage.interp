@@ -99,7 +99,7 @@ forStatement
 assignableExpression
 primaryExpression
 expression
-assignmentStatement
+assignmentExpression
 arrayDeclaration
 constant
 

@@ -2,6 +2,7 @@
 using Jacobi.Vst.Framework;
 using System;
 using System.Runtime.CompilerServices;
+using System.Threading;
 
 namespace CompilersProject
 {
@@ -18,6 +19,8 @@ namespace CompilersProject
         private Plugin plugin;
         private double midiNote;
         private float internalSampleRate;
+
+        public object LockerObject { get; set; } = new object();
 
         public static string OscFrequencyScriptText { get; set; }
             = "yield 440;" + Environment.NewLine + "pause 1;";
@@ -78,17 +81,20 @@ namespace CompilersProject
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void Process(out float output)
         {
-            UpdateScripts();
-            for (int i = 0; i < downsampler.Order; ++i)
+            lock (LockerObject)
             {
-                ProcessScripts();
-                var oscAOutput = oscA.Process();
-                var filterOutput = filter.Process(oscAOutput);
-                var amplifiedOutput = filterOutput * amp;
-                samplesForOversampling[i] = amplifiedOutput;
-            }
+                UpdateScripts();
+                for (int i = 0; i < downsampler.Order; ++i)
+                {
+                    ProcessScripts();
+                    var oscAOutput = oscA.Process();
+                    var filterOutput = filter.Process(oscAOutput);
+                    var amplifiedOutput = filterOutput * amp;
+                    samplesForOversampling[i] = amplifiedOutput;
+                }
             
-            output = (float)downsampler.Process(samplesForOversampling);
+                output = (float)downsampler.Process(samplesForOversampling);
+            }
         }
 
         private void ProcessScripts()

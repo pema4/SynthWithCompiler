@@ -99,7 +99,7 @@ namespace CompilersProject
         /// <returns>Массив сэмплов.</returns>
         private static float[] PrepareSamples(GeneratorFunction generator, double freq, double maxFreq)
         {
-            var length = (int)DefaultSampleRate;
+            var length = (int)DefaultSampleRate / 2;
             var result = new float[length];
             for (int i = 0; i < result.Length; ++i)
                 result[i] = (float)generator((double)i / result.Length, freq, maxFreq);

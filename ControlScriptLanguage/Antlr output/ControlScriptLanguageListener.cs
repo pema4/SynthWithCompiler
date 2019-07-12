@@ -21,6 +21,7 @@
 
 
     using System.Linq;
+    using System;
 
 using Antlr4.Runtime.Misc;
 using IParseTreeListener = Antlr4.Runtime.Tree.IParseTreeListener;
@@ -134,15 +135,15 @@ public interface IControlScriptLanguageListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitExpression([NotNull] ControlScriptLanguageParser.ExpressionContext context);
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="ControlScriptLanguageParser.assignmentStatement"/>.
+	/// Enter a parse tree produced by <see cref="ControlScriptLanguageParser.assignmentExpression"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterAssignmentStatement([NotNull] ControlScriptLanguageParser.AssignmentStatementContext context);
+	void EnterAssignmentExpression([NotNull] ControlScriptLanguageParser.AssignmentExpressionContext context);
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="ControlScriptLanguageParser.assignmentStatement"/>.
+	/// Exit a parse tree produced by <see cref="ControlScriptLanguageParser.assignmentExpression"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitAssignmentStatement([NotNull] ControlScriptLanguageParser.AssignmentStatementContext context);
+	void ExitAssignmentExpression([NotNull] ControlScriptLanguageParser.AssignmentExpressionContext context);
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="ControlScriptLanguageParser.arrayDeclaration"/>.
 	/// </summary>

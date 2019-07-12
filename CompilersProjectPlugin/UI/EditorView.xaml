@@ -30,7 +30,7 @@
             <TabItem Header="Частота осциллятора">
                 <DockPanel>
                     <TextBlock DockPanel.Dock="Bottom" TextWrapping="Wrap" Margin="3"
-                               Text="Этот скрипт регулирует частоту осциллятора (в герцах, положительное число)."/>
+                               Text="Этот скрипт управляет частотой осциллятора (в герцах, положительное число)."/>
                     
                     <ScrollViewer VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Auto">
                         <TextBox Style="{StaticResource textBoxWithCode}"
@@ -42,7 +42,7 @@
             <TabItem Header="Частота среза фильтра">
                 <DockPanel>
                     <TextBlock DockPanel.Dock="Bottom" TextWrapping="Wrap" Margin="3"
-                               Text="Этот скрипт управляет частотой фильтра (в герцах, положительное число)."/>
+                               Text="Этот скрипт управляет частотой среза фильтра (в герцах, положительное число)."/>
 
                     <ScrollViewer VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Auto">
                         <TextBox Style="{StaticResource textBoxWithCode}"

@@ -21,6 +21,7 @@
 
 
     using System.Linq;
+    using System;
 
 
 using Antlr4.Runtime.Misc;
@@ -158,17 +159,17 @@ public partial class ControlScriptLanguageBaseListener : IControlScriptLanguageL
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitExpression([NotNull] ControlScriptLanguageParser.ExpressionContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="ControlScriptLanguageParser.assignmentStatement"/>.
+	/// Enter a parse tree produced by <see cref="ControlScriptLanguageParser.assignmentExpression"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterAssignmentStatement([NotNull] ControlScriptLanguageParser.AssignmentStatementContext context) { }
+	public virtual void EnterAssignmentExpression([NotNull] ControlScriptLanguageParser.AssignmentExpressionContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="ControlScriptLanguageParser.assignmentStatement"/>.
+	/// Exit a parse tree produced by <see cref="ControlScriptLanguageParser.assignmentExpression"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitAssignmentStatement([NotNull] ControlScriptLanguageParser.AssignmentStatementContext context) { }
+	public virtual void ExitAssignmentExpression([NotNull] ControlScriptLanguageParser.AssignmentExpressionContext context) { }
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="ControlScriptLanguageParser.arrayDeclaration"/>.
 	/// <para>The default implementation does nothing.</para>
