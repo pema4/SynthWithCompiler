@@ -65,15 +65,15 @@ public interface IControlScriptLanguageListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitStatementBlock([NotNull] ControlScriptLanguageParser.StatementBlockContext context);
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="ControlScriptLanguageParser.prefixStatement"/>.
+	/// Enter a parse tree produced by <see cref="ControlScriptLanguageParser.returnStatement"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterPrefixStatement([NotNull] ControlScriptLanguageParser.PrefixStatementContext context);
+	void EnterReturnStatement([NotNull] ControlScriptLanguageParser.ReturnStatementContext context);
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="ControlScriptLanguageParser.prefixStatement"/>.
+	/// Exit a parse tree produced by <see cref="ControlScriptLanguageParser.returnStatement"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitPrefixStatement([NotNull] ControlScriptLanguageParser.PrefixStatementContext context);
+	void ExitReturnStatement([NotNull] ControlScriptLanguageParser.ReturnStatementContext context);
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="ControlScriptLanguageParser.ifStatement"/>.
 	/// </summary>

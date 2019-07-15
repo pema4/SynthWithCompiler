@@ -75,17 +75,17 @@ public partial class ControlScriptLanguageBaseListener : IControlScriptLanguageL
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitStatementBlock([NotNull] ControlScriptLanguageParser.StatementBlockContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="ControlScriptLanguageParser.prefixStatement"/>.
+	/// Enter a parse tree produced by <see cref="ControlScriptLanguageParser.returnStatement"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterPrefixStatement([NotNull] ControlScriptLanguageParser.PrefixStatementContext context) { }
+	public virtual void EnterReturnStatement([NotNull] ControlScriptLanguageParser.ReturnStatementContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="ControlScriptLanguageParser.prefixStatement"/>.
+	/// Exit a parse tree produced by <see cref="ControlScriptLanguageParser.returnStatement"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitPrefixStatement([NotNull] ControlScriptLanguageParser.PrefixStatementContext context) { }
+	public virtual void ExitReturnStatement([NotNull] ControlScriptLanguageParser.ReturnStatementContext context) { }
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="ControlScriptLanguageParser.ifStatement"/>.
 	/// <para>The default implementation does nothing.</para>

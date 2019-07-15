@@ -23,16 +23,16 @@ namespace CompilersProject
         public object LockerObject { get; set; } = new object();
 
         public static string OscFrequencyScriptText { get; set; }
-            = "yield 440;" + Environment.NewLine + "pause 1;";
+            = "return 440;";
 
         public static string FilterCutoffScriptText { get; set; }
-            = "yield 1760;" + Environment.NewLine + "pause 1;";
+            = "return 440;";
 
         public static string FilterResonanceScriptText { get; set; }
-            = "yield 0;" + Environment.NewLine + "pause 1;";
+            = "return 0;";
 
         public static string AmplitudeScriptText { get; set; }
-            = "yield 1;" + Environment.NewLine + "pause 1;";
+            = "yield 1;";
 
         public IControlScript OscAFrequencyScript { get; set; } = new DummyControlScript(440);
 
